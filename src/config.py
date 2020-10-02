@@ -14,7 +14,8 @@ class Config:
     FLASKY_MAIL_SENDER = 'Flasky Admin <flasky@example.com>'
     FLASKY_ADMIN = os.environ.get('FLASKY_ADMIN')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    FLASKY_POSTS_PER_PAGE = 20  # Пагинация
+    FLASKY_POSTS_PER_PAGE = 20  # Пагинация страницы постов
+    FLASKY_FOLLOWERS_PER_PAGE = 50  # Пагинация страницы подписчиков
 
     @staticmethod
     def init_app(app):
