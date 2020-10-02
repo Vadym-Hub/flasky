@@ -57,3 +57,9 @@ class PostForm(FlaskForm):
     """Форма для поста"""
     body = PageDownField("Что у тебя на уме?", validators=[DataRequired()])
     submit = SubmitField('Submit')
+
+
+class CommentForm(FlaskForm):
+    """Форма для комментария"""
+    body = StringField('Напишите свой комментарий', validators=[DataRequired()])
+    submit = SubmitField('Submit')
