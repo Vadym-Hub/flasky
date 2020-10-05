@@ -76,3 +76,7 @@ pip install email-validator  # решение для проблеммы вали
 pip install faker  # Для автоматического создания тестовой(фейковой) базы данных
 
 pip install flask-pagedown markdown bleach  # to support the Mark‐down syntax and present a rich-text preview of the post
+
+pip install flask-httpauth  # Для HTTP-аутентификации для API
+
+pip install httpie  # Для тестирования API-запросов
