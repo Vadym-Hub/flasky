@@ -17,6 +17,9 @@ class Config:
     FLASKY_POSTS_PER_PAGE = 20  # Пагинация страницы постов
     FLASKY_FOLLOWERS_PER_PAGE = 50  # Пагинация страницы подписчиков
     FLASKY_COMMENTS_PER_PAGE = 30
+    # Настройки для отчета по медленным запросам
+    SQLALCHEMY_RECORD_QUERIES = True
+    FLASKY_SLOW_DB_QUERY_TIME = 0.5
 
     @staticmethod
     def init_app(app):
