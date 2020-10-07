@@ -40,6 +40,9 @@ There are also a few new files:
 
 flask run
 
+#  Запуск тестов
+(venv) $ flask test
+
 #  Создание БД data.sqlite
 (venv) $ flask shell
 >>> from hello import db
@@ -80,3 +83,6 @@ pip install flask-pagedown markdown bleach  # to support the Mark‐down syntax 
 pip install flask-httpauth  # Для HTTP-аутентификации для API
 
 pip install httpie  # Для тестирования API-запросов
+
+pip install coverage  # Для получения отчетов о покрытии кода тестами
+(venv) $ flask test --coverage  # Запуск проверки на покрытие
