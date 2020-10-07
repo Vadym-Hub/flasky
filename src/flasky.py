@@ -8,7 +8,7 @@ if os.environ.get('FLASK_COVERAGE'):
 
 import sys
 import click
-from flask_migrate import Migrate
+from flask_migrate import Migrate, upgrade
 from app import create_app, db
 from app.models import User, Follow, Role, Permission, Post, Comment
 
@@ -60,4 +60,17 @@ def profile(length, profile_dir):
     """Start the application under the code profiler."""
     from werkzeug.contrib.profiler import ProfilerMiddleware
     app.wsgi_app = ProfilerMiddleware(app.wsgi_app, restrictions=[length], profile_dir=profile_dir)
-    app.run(debug=False)
+    app.run()
+
+
+@app.cli.command()
+def deploy():
+    """Выполняет задачи для деплоя."""
+    # зделать миграцию ДБ до последней версии
+    upgrade()
+
+    # создать или обновить роли пользователей
+    Role.insert_roles()
+
+    # убедиться, что все пользователи подписаны сами на себя
+    User.add_self_follows()
