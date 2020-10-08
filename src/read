@@ -89,3 +89,12 @@ pip install coverage  # Для получения отчетов о покрыт
 
 pip install selenium  # Утилита Selenium для тестирования
 brew install chromedriver  # драйвер для macOS
+
+# Для заливки на heroku:
+pip install flask-sslify  # Перенаправляет запросы с http:// на https://
+pip install gunicorn  # Производственный сервер для Python для linux
+pip install waitress  # Замена gunicorn для windows
+
+pip install psycopg2-binary  # Драйвер для PostgreSQL
+
+
